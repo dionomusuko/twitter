@@ -1,0 +1,14 @@
+<h1>Tweeter</h1>
+
+<%= link_to '新規追加', new_tweet_path %>
+<% @tweets.each do |tw| %>
+  <table>
+    <tr>
+      <td><%= tw["message"] %></td>
+      <td><%= tw["tdate"] %></td>
+    </tr>
+  </table>
+    <%= link_to '編集', edit_tweet_path %>
+    <%= link_to '削除', tw, method: :delete, data: { confirm: "タスク「#{tw.message}」を削除してもよろしいですか？"}%>
+<% end %>
+

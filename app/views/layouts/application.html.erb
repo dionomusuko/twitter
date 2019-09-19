@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Twwiter</title>
+    <title>Twitter</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="app-title nav-bar navbar-expend-md navbar-light bg-light">
+      <div class="navbar-brand">Twitter</div>
+    </div>
+    <div class="container">
+      <% if flash.notice.present? %>
+        <div class="alert alert-success" role="alert">
+          <%= flash.notice %><%end%></div>
+
+
+      <div class="container"><%= yield %></div>
+    </div>
   </body>
 </html>

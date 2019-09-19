@@ -1,14 +1,27 @@
-<h1>Tweeter</h1>
 
-<%= link_to '新規追加', new_tweet_path %>
-<% @tweets.each do |tw| %>
-  <table>
-    <tr>
-      <td><%= tw["message"] %></td>
-      <td><%= tw["tdate"] %></td>
-    </tr>
+<p><%= link_to '新規追加', new_tweet_path, class: 'btn btn-info' %></p>
+<div class="mb-3">
+  <table class="table table-hover">
+    <thead class="thead-default">
+      <tr>
+        <th>ツイート</th>
+        <th>経過時間</th>
+        <th></th>
+      </tr>
+    </thead>
+        <thbody>
+          <% @tweets.each do |tw| %>
+          <tr>
+            <td><%= link_to tw.message, tw %></td>
+            <td><time datetime="<%= tw.created_at %>">
+              <%= time_ago_in_words(tw.created_at) %>
+            </time>
+            </td>
+            <td>
+            <%= link_to '編集', edit_tweet_url(tw), class: 'btn btn-primary mr-3'%>
+            <%= link_to '削除', tw, method: :delete, data: { confirm: "タスク「#{tw.message}」を削除してもよろしいですか？"}, class: 'btn btn-danger'%><% end %></td>
+          </tr>
+        </thbody>
   </table>
-    <%= link_to '編集', edit_tweet_path %>
-    <%= link_to '削除', tw, method: :delete, data: { confirm: "タスク「#{tw.message}」を削除してもよろしいですか？"}%>
-<% end %>
+</div>
 

@@ -1,10 +1,10 @@
 
 <% if @tweet.errors.present? %>
-  <h3>エラーがあります</h3>
-  <ul>
-    <% @tweet.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
+  <div class="alert alert-danger" role="alert"><h3>エラーがあります</h3>
+    <ul>
+      <% @tweet.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %></div>
 <% end %>
 
 <%= link_to '一覧', tweets_path, class: 'btn btn-info' %>

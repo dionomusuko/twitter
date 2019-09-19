@@ -1,2 +1,18 @@
-<h1>Tweets#show</h1>
-<p>Find me in app/views/tweets/show.html.erb</p>
+
+<%= link_to '一覧', tweets_url, class: 'btn btn-info'%>
+
+
+<table>
+  <tbody>
+  <tr>
+    <th>ツイート</th>
+    <td>@tweet.message</td></tr>
+  <tr>
+    <th>経過時間</th>
+    <td><time datetime="<%= @tweet.created_at %>">
+      <%= time_ago_in_words(@tweet.created_at) %>
+    </time></td>
+  </tr>
+
+  </tbody>
+</table>

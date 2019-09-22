@@ -4,6 +4,7 @@
   <table class="table table-hover">
     <thead class="thead-default">
       <tr>
+        <th><%= Tweet.human_attribute_name(:name) %></th>
         <th><%= Tweet.human_attribute_name(:message) %></th>
         <th><%= Tweet.human_attribute_name(:created_at)%></th>
         <th></th>
@@ -12,6 +13,7 @@
         <thbody>
           <% @tweets.each do |tw| %>
           <tr>
+            <td>名無しのユーザー</td>
             <td><%= link_to tw.message, tw %></td>
             <td><time datetime="<%= tw.created_at %>">
               <%= time_ago_in_words(tw.created_at) %>

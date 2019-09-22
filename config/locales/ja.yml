@@ -11,6 +11,7 @@ ja:
       tweets:
     attributes:
       tweet:
+        name: ユーザー名
         id: ID
         message: ツイート
         created_at: 経過時間

@@ -21,7 +21,8 @@
             </td>
             <td>
             <%= link_to '編集', edit_tweet_url(tw), class: 'btn btn-primary mr-3'%>
-            <%= link_to '削除', tw, method: :delete, data: { confirm: "タスク「#{tw.message}」を削除してもよろしいですか？"}, class: 'btn btn-danger'%><% end %></td>
+            <%= link_to '削除', tw, method: :delete, data: { confirm: "タスク「#{tw.message}」を削除してもよろしいですか？"}, class: 'btn btn-danger'%>
+          <% end %></td>
           </tr>
         </thbody>
   </table>

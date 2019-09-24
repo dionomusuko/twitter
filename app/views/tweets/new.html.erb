@@ -12,6 +12,7 @@
 <%= form_with model: @tweet, local: true do |f| %>
   <p class="form_group"><%= f.label :message, 'メッセージ'%>
     <%= f.text_area :message, row: 5, class: 'form-control', id: 'tweet_message'%></p>
-
+    <%= hidden_field_tag :tdate, @tweet.tdate = Time.current %>
+    <%= f.hidden_field :tdate, :value => @tweet.tdate %>
   <p><%= f.submit '登録', class: 'btn btn-primary' %></p>
 <% end %>

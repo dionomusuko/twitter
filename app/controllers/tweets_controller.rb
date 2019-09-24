@@ -43,6 +43,6 @@ end
 
 private
   def tweet_params
-    params.require(:tweet).permit(:message)
+    params.require(:tweet).permit(:message, :tdate)
   end
 
